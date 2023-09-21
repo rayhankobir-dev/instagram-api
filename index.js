@@ -30,7 +30,7 @@ app.post("/publish", async (req, res) => {
         console.error(err);
         res
           .status(500)
-          .json({ status: 500, message: "Failed to resize image" });
+          .json({ status: 500, message: "Failed to resize image", error: err });
       } else {
         const isPublished = await postToInsta();
         if (isPublished) {
