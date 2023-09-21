@@ -11,6 +11,10 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(fileUpload());
 
+app.get("/", (req, res) => {
+  res.status(200).json({ status: 200, message: "Hello from api" });
+});
+
 app.post("/publish", async (req, res) => {
   const file = req.files.file;
 
